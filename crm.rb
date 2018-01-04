@@ -75,11 +75,12 @@ end
 end
 
 def delete_contact
-puts "What the id the contact you would like to delete!"
+puts "Which contact you would like to delete!"
 del = gets.chomp.to_i
 Contact.all.each do |contact|
 if contact.id == del
 contact.delete
+print "deleted"
 end
 end
 
@@ -88,32 +89,59 @@ print Contact.all
 end
 
 
-
-
-
-
-
-
-
-  def add_new_contact
-
-  end
-
-  def modify_existing_contact
-
-  end
-
-  def delete_contact
-
-  end
-
-  def display_all_contacts
-
-  end
-
-  def search_by_attribute
-
-  end
-
-
+def search_by_attribute
+puts "what would you like to search by?"
+search_by = gets.chomp
+puts "enter #{search_by}"
+value = gets.chomp
+p Contact.find_by(search_by => value)
 end
+end
+
+
+
+def search_by_attribute
+puts "Search by first name, last name, email ?"
+search_by = gets.chomp
+puts "enter #{search_by}"
+value = gets.chomp
+attribute = :first_name
+attribute = :last_name
+attribute = :email
+contacts = Contact.all
+print Contact.find_by(search_by => value)
+end
+end
+
+
+
+#
+#
+#
+#
+#
+#
+#
+#
+#   def add_new_contact
+#
+#   end
+#
+#   def modify_existing_contact
+#
+#   end
+#
+#   def delete_contact
+#
+#   end
+#
+#   def display_all_contacts
+#
+#   end
+#
+#   def search_by_attribute
+#
+#   end
+#
+#
+# end
